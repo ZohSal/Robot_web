@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Interface</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="dashboard">
+    <div class="menu-panel">
+        <!-- Menu buttons -->
+        <button id="btn-ultrasonic">Ultrasonic</button>
+        <button id="btn-grayscale">Grayscale</button>
+        <!-- ... other buttons ... -->
+    </div>
+    <div class="first-column">
+        <div class="speed-monitor" id="speed-monitor">
+            <span id="speed-value">18m/s</span>
+        </div>
+        <div class="mileage" id="mileage">
+            <span id="mileage-value">725cm</span>
+            <button id="btn-reset">Reset</button>
+        </div>
+        <div class="arrow-keys up-down">
+            <button id="btn-up">▲</button>
+            <button id="btn-down">▼</button>
+        </div>
+    </div>
+    <div class="second-column">
+        <div class="obstacle-monitor" id="obstacle-monitor">
+            <canvas id="obstacle-canvas" width="300" height="150"></canvas>
+        </div>
+        <div class="grayscale-monitor" id="grayscale-monitor">
+            <canvas id="grayscale-canvas" width="300" height="150"></canvas>
+        </div>
+    </div>
+    <div class="third-column">
+        <div class="power-regulator" id="power-regulator">
+            <input type="range" id="power-level" min="0" max="100" value="50">
+            <label for="power-level" id="power-value">50%</label>
+        </div>
+        <div class="arrow-keys left-right">
+            <button id="btn-left">◀</button>
+            <button id="btn-right">▶</button>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
